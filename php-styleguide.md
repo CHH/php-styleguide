@@ -144,6 +144,9 @@
      }
      ```
 
+ * If you're nesting control structures deeper than 3 levels within a
+   function or method, then you should consider breaking the method up
+   in smaller ones or refactor it so it returns early.
  * Throw exceptions in _exceptional cases_, that means when it ain't reasonable
    to execute the code that follows.
  * Consider throwing an Exception with a descriptive error message instead of
