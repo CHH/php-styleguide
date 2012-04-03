@@ -16,101 +16,113 @@
  * Put a single space after the control statement and opening parenthesis.
  * You must not put spaces around the expressions inside brackets or parenthesis.
    
-       <?php
-       
-       # Bad:
-       if ( ! $user ) {
-       
-       }
-
-       $_GET[ "foo" ];
-       
-       # Good:
-       if (!$user) {
-       
-       }
-
-       $_GET["foo"];
+     ```php
+     <?php
+      
+     # Bad:
+     if ( ! $user ) {
+      
+     }
+      
+     $_GET[ "foo" ];
+      
+     # Good:
+     if (!$user) {
+      
+     }
+      
+     $_GET["foo"];
+     ```
  * Separate multiple classes/functions/methods by exactly one blank line.
- 
-       <?php
-       
-       # Bad:
-       function foo()
-       {
-           …
-       }
-       function bar()
-       {
-           …
-       }
-       
-       # Good:
-       function foo()
-       {
-           …
-       }
-       
-       function bar()
-       {
-           …
-       }
+   
+     ```php
+     <?php
+    
+     # Bad:
+     function foo()
+     {
+     }
+     function bar()
+     {
+     }
+    
+     # Good:
+     function foo()
+     {
+     }
+    
+     function bar()
+     {
+     }
+     ```
  * Do _not_ leave excessive numbers of blank lines before closing braces.
- 
-       <?php
+     
+     ```php
+     <?php
        
-       # Bad:
-       class Foo
-       {
-           function greet()
-           {
-               return "Hello!";
-           }
-           
-           
-           
-           
-       }
+     # Bad:
+     class Foo
+     {
+         function greet()
+         {
+             return "Hello!";
+         }
        
-       # Good:
-       class Foo
-       {
-           function greet()
-           {
-               return "Hello!";
-           }
-       }
- 
+       
+       
+         
+
+         
+         
+         
+         
+     }
+   
+     # Good:
+     class Foo
+     {
+         function greet()
+         {
+             return "Hello!";
+         }
+     }
+     ```
+
 ### Braces
 
  * Put the opening brace on the same line as the `function` keyword when
    defining _anonymous_ functions.
+
+     ```php
+     <?php
    
-       <?php
-       
-       $power2 = function($number) {
-           return $numer * $number;
-       };
+     $power2 = function($number) {
+         return $numer * $number;
+     };
+     ```
+
  * Put the brace on line by itself after Class, Interface or function 
    definitions (including methods).
    
-       <?php
-       
-       class Foo
-       {
-        	function greet() 
-        	{
-        		return "Hello World";
-        	}
-       }
-       
-       interface Bar
-       {
-       }
-       
-       function str_yadayada()
-       {
-       }
+     ```php
+     <?php
+   
+     class Foo
+     {
+    	  function greet() 
+    	  {
+      		  return "Hello World";
+    	  }
+     }
+   
+     interface Bar
+     {
+     }
+   
+     function str_yadayada()
+     {
+     }
+     ```
  
 ## Code Style
 
@@ -119,16 +131,19 @@
  * Throw an `InvalidArgumentException` when you can't do _anything_ with the argument.
  * Return as early as possible.
    
-       <?php
+     ```php
+     <?php
+    
+     function getUser($id)
+     {
+        if ($user = Cache\get("user:$id")) {
+            return $user;
+        }
        
-       function getUser($id)
-       {
-           if ($user = Cache\get("user:$id")) {
-               return $user;
-           }
-           
-           # Do more.
-       }
+        # Do more.
+     }
+     ```
+
  * Throw exceptions in _exceptional cases_, that means when it ain't reasonable
    to execute the code that follows.
  * Consider throwing an Exception with a descriptive error message instead of
@@ -142,59 +157,72 @@
  * Don't use more keywords than necessary.
  * When importing namespaces use _one_ `use` statement with a list of namespace/class names.
  
-       <?php
-       
-       use Foo\InvalidArgumentException,
-           Foo\Bar\Baz;
+     ```php
+     <?php
+    
+     use Foo\InvalidArgumentException,
+         Foo\Bar\Baz;
+     ```
+
  * Write all language constructs which act like functions (`require`, `include`, `echo`, `print`,…) _with_ parenthesis. They act like functions, so they should look like functions.
-       
-       <?php
-       
-       # Bad:
-       echo "Hello World\n";
-       
-       # Good:
-       echo("Hello World\n");
+   
+    ```php
+    <?php
+   
+    # Bad:
+    echo "Hello World\n";
+   
+    # Good:
+    echo("Hello World\n");
+    ```
 
 ### Classes
 
  * Omit the `public` keyword on public methods, so they are visually more distinct from private/protected methods. 
    
-       <?php
-       
-       class Foo
-       {
-           function greet()
-           {
-               return "Hello!";
-           }
-       }
+     ```php
+     <?php
+    
+     class Foo
+     {
+         function greet()
+         {
+             return "Hello!";
+         }
+     }
+     ```
+
  * You can omit the `public` keyword from public static properties.
    
-       <?php
+     ```php
+     <?php
+    
+     class Foo
+     {
+         # bad
+         public static $foo;
        
-       class Foo
-       {
-           # bad
-           public static $foo;
-           
-           # good
-           static $foo;
-       }
+         # good
+         static $foo;
+     }
+     ```
+
  * Group properties by their visibility by writing the visibility keyword once and putting each property on its own line and adding one level of indent.
  
-       <?php
+     ```php
+     <?php
+    
+     class Foo
+     {
+         public
+             $foo,
+             $bar;
        
-       class Foo
-       {
-           public
-               $foo,
-               $bar;
-           
-           protected
-               $baz,
-               $boo;
-       }
+         protected
+             $baz,
+             $boo;
+     }
+     ```
 
 ## Naming
 
@@ -204,25 +232,30 @@
  * Use UPPER_CASE for constants and globals.
  * Avoid class names that end with "Manager".
  * Avoid a "do" prefix in function/method names.
- 
-       <?php
-       
-       # Bad:
-       $tasks->doLast(function() { … });
-       
-       # Good:
-       $tasks->append(function() { … });
+   
+     ```php
+     <?php
+    
+     # Bad:
+     $tasks->doLast(function() { … });
+    
+     # Good:
+     $tasks->append(function() { … });
+     ```
+
  * Method names should be verbs.
  * Variables which contain collections of objects should be named
    after the type of object they contain, only pluralized.
-   
-       <?php
-       
-       # Bad:
-       $taskList = new TaskList;
-       
-       # Good:
-       $tasks = new TaskList;
+     
+     ```php
+     <?php
+    
+     # Bad:
+     $taskList = new TaskList;
+    
+     # Good:
+     $tasks = new TaskList;
+     ```
 
 ## Documentation
 
