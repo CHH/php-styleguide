@@ -12,7 +12,7 @@ forked.
 
 If you've questions or want to discuss: open an issue in the [issue
 tracker](/CHH/php-styleguide/issues) or direct your tweets at
-`[@hochchristoph](http://twitter.com/hochchristoph)`.
+[`@hochchristoph`](http://twitter.com/hochchristoph).
 
 [projects]: https://github.com/CHH/
 
