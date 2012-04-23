@@ -1,5 +1,13 @@
 # PHP Style Guide
 
+## Disclaimer
+
+Everything that's true with rules of all sorts, is also true here.
+They're _just_ rules, and are meant to be bended, broken and questioned.
+
+When you feel like that a rule should be questioned, raise an Issue in
+this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
+
 ## Source Code Layout
 
  * Use _four spaces_ for each intendation level.
