@@ -99,6 +99,21 @@ this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
 
 ### Braces
 
+ * Put the opening brace on the same line as the keyword when using
+   control structures.
+
+     ```php
+     <?php
+     
+     if ($happyAndKnowsIt) {
+         clapsHands();
+     }
+
+     while (true) {
+        danceTheDance();
+     }
+     ```
+
  * Put the opening brace on the same line as the `function` keyword when
    defining _anonymous_ functions.
 
@@ -171,7 +186,8 @@ this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
 
 ## Language
 
- * Don't use more keywords than necessary.
+ * Don't use more keywords than necessary. This is a general rule, on
+   which more rules are based on.
  * When importing namespaces use _one_ `use` statement with a list of namespace/class names.
  
      ```php
@@ -181,7 +197,7 @@ this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
          Foo\Bar\Baz;
      ```
 
- * Write all language constructs which act like functions (`require`, `include`, `echo`, `print`,…) _with_ parenthesis. They act like functions, so they should look like functions.
+ * Write all language constructs which act like functions (`require`, `include`, `echo`, `print`,…) _with_ parenthesis. They act like functions, so they should look like functions. You may ignore this with `return` and `echo`.
    
     ```php
     <?php
@@ -269,7 +285,10 @@ this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
      <?php
     
      # Bad:
-     $taskList = new TaskList;
+     $taskListInstance = new TaskList;
+
+     # Bad:
+     $tl = new TaskList;
     
      # Good:
      $tasks = new TaskList;
