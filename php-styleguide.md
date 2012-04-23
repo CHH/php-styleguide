@@ -11,9 +11,10 @@
 
 ### Whitespace
 
+ * Use Blank Lines to group code into paragraphs for better readability.
  * Lines should not have any trailing whitespace.
  * Put spaces around operators, such as `+`, `.`, `=`, etc.
- * Put a single space after the control statement and opening parenthesis.
+ * Put a single space after the control statement's keyword.
  * You must not put spaces around the expressions inside brackets or parenthesis.
    
      ```php
@@ -97,12 +98,13 @@
      <?php
    
      $power2 = function($number) {
-         return $numer * $number;
+         return $number * $number;
      };
      ```
 
- * Put the brace on line by itself after Class, Interface or function 
-   definitions (including methods).
+ * Put the brace on its own line after Class, Interface or function 
+   definitions (including methods). This makes the function's argument
+   list and the class definitions more stand out.
    
      ```php
      <?php
@@ -148,10 +150,14 @@
    function or method, then you should consider breaking the method up
    in smaller ones or refactor it so it returns early.
  * Throw exceptions in _exceptional cases_, that means when it ain't reasonable
-   to execute the code that follows.
+   to execute the code that is following.
  * Consider throwing an Exception with a descriptive error message instead of
    returning `false`.
- * When something wasn't found consider returning `null`.
+ * To indicate an error without _throwing_ an Exception, consider
+   creating an Exception instance and return it alongside a safe default
+   value. Document that the function may have multiple return values!
+ * When something wasn't found, consider returning `null`, or an
+   NullObject.
  * Put all of your code in a namespace.
  * Avoid adding new global functions.
 
@@ -226,13 +232,14 @@
              $boo;
      }
      ```
+ * Define Properties and constants always on the top of the class body.
 
 ## Naming
 
  * Use __U__pperCamelCase for classes, namespaces and interfaces.
- * Use __l__owerCamelCase for methods, _functions_ and variables. 
+ * Use __l__owerCamelCase for methods, __functions__ and variables. 
  * Do not use underscores in function names. Methods are functions, so they should be named using the same rules.
- * Use UPPER_CASE for constants and globals.
+ * Use UPPER\_CASE for constants and globals.
  * Avoid class names that end with "Manager".
  * Avoid a "do" prefix in function/method names.
    
@@ -269,3 +276,4 @@
  
 [phpdoc]: http://phpdoc.org
 [tomdoc]: http://tomdoc.org
+
