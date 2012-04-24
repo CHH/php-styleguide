@@ -103,7 +103,7 @@
      }
 
      while (true) {
-        danceTheDance();
+         danceTheDance();
      }
      ```
 
@@ -118,19 +118,20 @@
      };
      ```
 
- * Put the brace on its own line after Class, Interface or function 
+ * Put the brace on its own line after Class, Interface or named function 
    definitions (including methods). This makes the function's argument
-   list and the class definitions more stand out.
+   list and the class definitions more stand out from the code that
+   follows.
    
      ```php
      <?php
    
      class Foo
      {
-    	  function greet() 
-    	  {
-      		  return "Hello World";
-    	  }
+         function greet() 
+         {
+             return "Hello World";
+    	 }
      }
    
      interface Bar
@@ -154,11 +155,11 @@
     
      function getUser($id)
      {
-        if ($user = Cache\get("user:$id")) {
-            return $user;
-        }
+         if ($user = Cache\get("user:$id")) {
+             return $user;
+         }
        
-        # Do more.
+         # Do more.
      }
      ```
 
