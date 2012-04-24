@@ -294,6 +294,29 @@
  * Use the "#" comment character for inline comments and for Tomdoc doc blocks.
  * Put a single space after the comment character.
  * Document API functions with examples.
+ * Do not put unnecessary blank lines into comments:
+
+     ```php
+     <?php
+ 
+     # Bad:
+ 
+     # Makes the string uppercase.
+     #
+     #
+     #
+     #
+     function upcase()
+     {
+     }
+
+     # Good:
+
+     # Makes the string uppercase.
+     function upcase()
+     {
+     }
+     ```
  
 [phpdoc]: http://phpdoc.org
 [tomdoc]: http://tomdoc.org
