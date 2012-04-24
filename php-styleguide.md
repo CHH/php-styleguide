@@ -1,13 +1,5 @@
 # PHP Style Guide
 
-## Disclaimer
-
-Everything that's true with rules of all sorts, is also true here.
-They're _just_ rules, and are meant to be bended, broken and questioned.
-
-When you feel like that a rule should be questioned, raise an Issue in
-this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
-
 ## Source Code Layout
 
  * Use _four spaces_ for each intendation level.
@@ -23,6 +15,7 @@ this project's Issue Tracker or [contact me](http://twitter.com/hochchristoph).
  * Lines should not have any trailing whitespace.
  * Put spaces around operators, such as `+`, `.`, `=`, etc.
  * Put a single space after the control statement's keyword.
+ * Use whitespace and intendation _consistently_ throughout the code.
  * You must not put spaces around the expressions inside brackets or parenthesis.
    
      ```php
