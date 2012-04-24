@@ -69,15 +69,15 @@
          {
              return "Hello!";
          }
-       
-       
-       
-         
-
-         
-         
-         
-         
+         #
+         #
+         #
+         #
+         #
+         #
+         #
+         #
+         # (comments = whitespace)
      }
    
      # Good:
